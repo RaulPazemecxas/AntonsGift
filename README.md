@@ -1,6 +1,6 @@
 # 🎁 The Anton Gift: A Saga of Code & Solder
 
-> *"Welcome back to Brazil, Anton! Let's kick off 2026 with energy."*
+> *"Hello, Anton. Have a good journey."*
 
 ## 📖 The Story
 
