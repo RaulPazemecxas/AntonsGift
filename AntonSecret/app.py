@@ -4,9 +4,6 @@ from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
-# --- CONFIGURAÇÃO ---
-# A pasta ainda é necessária para servir os arquivos estáticos,
-# mas não precisamos mais de lógica de gravação.
 UPLOAD_FOLDER = 'static/uploads'
 DATA_FILE = 'uploads_db.json'
 
@@ -139,4 +136,5 @@ def index():
     return render_template('index.html', pages=STORY_PAGES, uploads=uploads)
 
 if __name__ == '__main__':
+
     app.run(debug=True)
