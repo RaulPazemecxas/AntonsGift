@@ -84,7 +84,14 @@ Located in the AntonSecret/ folder, this web project serves as the manual and "M
 
 ![WhatsApp Image 2025-12-05 at 23 22 32](https://github.com/user-attachments/assets/f8888645-ca4c-4417-bcf9-d2a6e3ae54b5)
 
-## Website briefing:
+# Website briefing:
+The website was built so that Anton can learn about the process behind the coding, soldering, planning, and design of the circuits, software, and hardware of the gift.
+
+On the website, I explain how the 16x2 LCD display gives a voice to the entire team, so that Anton can get to know everyone... including myself. =)
+
+The website is hosted at #**https://antonragin.com.br**
+
+I hope you enjoy it! I wanted to make the experience feel as close as possible to a digital comic book!
 
 ![WhatsApp Image 2025-12-06 at 12 43 14](https://github.com/user-attachments/assets/6650ed8f-4307-4e7e-9d97-851c4f6dc9d8)
 
