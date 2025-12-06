@@ -18,9 +18,18 @@ The gift is a dual-experience designed to test memory and celebrate the team:
 The core of the gift is a reaction and memory game. The player must repeat the sequence of flashing LEDs. However, this isn't just a toy; it's a communication device.
 
 ### Features
-* **🧠 Memory Challenge:** Randomly generated sequences that get progressively harder.
-* **📟 LCD Display:** Provides real-time feedback, scores, and scrolling hidden messages.
-* **🔊 Audio Feedback:** Piezo buzzer integration for game sounds and musical themes.
+
+* **🧠 Memory Challenge:** Randomly generated sequences that get progressively harder. 
+
+https://github.com/user-attachments/assets/6a947477-880d-4657-8bc3-529d456b1d57
+
+
+* **📟 LCD Display:**  scrolling hidden messages.
+
+https://github.com/user-attachments/assets/20b7779c-3c81-4046-9e46-5381dd04fabf
+
+
+* **🔊 Audio Feedback:**  buzzer integration for game sounds and musical themes.
 
 ---
 
@@ -28,9 +37,23 @@ The core of the gift is a reaction and memory game. The player must repeat the s
 
 By inputting specific **"Cheat Codes"** (button combinations) on the device, the firmware unlocks hidden functions:
 
+
 * **The Team's Voice:** Displays scrolling messages from the entire Oryx Capital team.
+
+https://github.com/user-attachments/assets/7683e96f-ce5e-4ef9-87e7-5eedf6a23aad
+
+
 * **The Plumber's Anthem:** Plays the iconic *Super Mario Bros* theme.
+
+https://github.com/user-attachments/assets/5c0b7eb6-9a0b-4d6c-8412-3069d15dee0d
+
+
 * **The Dark Side:** Plays the *Imperial March* from Star Wars.
+
+https://github.com/user-attachments/assets/87640133-291d-469a-8694-d102ec09a8ac
+
+
+
 
 ---
 
