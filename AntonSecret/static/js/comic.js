@@ -46,7 +46,6 @@ function playZeldaMusic() {
     const audio = document.getElementById('zelda-theme');
     const video = document.getElementById('zelda-video-player');
 
-    // Se a música tocar, queremos garantir que o vídeo esteja mudo para não ter conflito
     if (video) video.muted = true;
 
     if (audio) {
@@ -131,15 +130,12 @@ function executePageChange(direction) {
             if (direction > 0) currentEl.classList.add('-translate-x-[100px]', 'scale-90');
             else currentEl.classList.add('translate-x-[100px]', 'scale-90');
 
-            // Pausa vídeos da página anterior
             const vids = currentEl.querySelectorAll('video');
             vids.forEach(v => v.pause());
         }
 
         currentPage = newPage;
 
-        // --- LÓGICA DE ÁUDIO POR PÁGINA ---
-        // 4 = "A Forja de Vulcano"
         if (currentPage === 4) {
             playZeldaMusic();
         } else {
@@ -167,4 +163,5 @@ function updateUI() {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') changePageWithDelay(1);
     if (e.key === 'ArrowLeft') changePageWithDelay(-1);
+
 });
