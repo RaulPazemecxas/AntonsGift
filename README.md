@@ -76,7 +76,7 @@ Located in the AntonSecret/ folder, this web project serves as the manual and "M
 -> Custom CSS (comic.css): Implements halftone patterns, skewed borders, and "speech bubble" aesthetics.
 
 
-## Breadboard and electronic diagrams for LCD & Genius Game (Anton Game =))
+## Breadboard and electronic diagrams for LCD & Genius Game ( Anton Arduino C++ Game =) )
 
 ![WhatsApp Image 2025-12-05 at 19 59 15](https://github.com/user-attachments/assets/49f808b1-4896-40b5-bb14-a8442f5ff946)
 
@@ -84,8 +84,21 @@ Located in the AntonSecret/ folder, this web project serves as the manual and "M
 
 ![WhatsApp Image 2025-12-05 at 23 22 32](https://github.com/user-attachments/assets/f8888645-ca4c-4417-bcf9-d2a6e3ae54b5)
 
+## Website briefing:
 
+![WhatsApp Image 2025-12-06 at 12 43 14](https://github.com/user-attachments/assets/6650ed8f-4307-4e7e-9d97-851c4f6dc9d8)
 
+![WhatsApp Image 2025-12-06 at 12 43 51](https://github.com/user-attachments/assets/dc9055fe-f639-477a-9279-14eeb1707d9f)
 
+![WhatsApp Image 2025-12-06 at 12 44 25](https://github.com/user-attachments/assets/a26b6fd8-3b25-474a-adf7-2f01a0048a4a)
 
+![WhatsApp Image 2025-12-06 at 12 44 51](https://github.com/user-attachments/assets/2f64bec2-4b66-47bc-96ce-30321628cc8d)
+
+![WhatsApp Image 2025-12-06 at 12 44 51](https://github.com/user-attachments/assets/d1fe9b56-6ba5-40d3-b768-bbe082682a31)
+
+![WhatsApp Image 2025-12-06 at 12 46 11](https://github.com/user-attachments/assets/fd885dd6-9c5e-49dd-8386-3d15379d98cd)
+
+![WhatsApp Image 2025-12-06 at 12 46 43](https://github.com/user-attachments/assets/42e58c5d-6a50-4783-8fff-19d16c473fd3)
+
+![WhatsApp Image 2025-12-06 at 12 47 16](https://github.com/user-attachments/assets/1ddc4c30-7ec6-4abc-8ea5-36f957a6f51e)
 
