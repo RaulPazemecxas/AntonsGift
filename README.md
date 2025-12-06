@@ -69,6 +69,8 @@ This architecture allows for smooth scrolling of long text strings on the 16x2 L
 Located in the AntonSecret/ folder, this web project serves as the manual and "Making Of" documentary, presented in a Retro Comic Book style.
 
 # Web Tech Stack
+-> Python/Flask for backend routes and web-server (dev, yeah, I was too lazy to set up a nginx/apache)
+
 -> HTML5 & Tailwind CSS: For the responsive, comic-panel layout.
 
 -> Vanilla JS (comic.js): Handles the page turning logic, language toggling (EN/PT), and audio atmosphere (Zelda theme).
