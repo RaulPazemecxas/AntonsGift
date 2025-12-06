@@ -7,14 +7,17 @@
 
 LiquidCrystal_I2C lcd(0x27, 16, 2); 
 
-const char txt_arthur[] PROGMEM = "Welcome back to Brazil, Anton! It's great to have you here again. Let's make the most of this time together and kick off 2026 with energy.";
-const char txt_mateus[] PROGMEM = "Hey Anton, agradeco a oportunidade, muito feliz em fazer parte do time da Oryx, espero que possamos crescer muito nos proximos anos. Keep going";
-const char txt_leo[]    PROGMEM = "Todo mundo na Oryx ta fazendo o possivel e as vezes o impossivel pelo projeto. O sucesso e uma questao de tempo.";
-const char txt_aline[]  PROGMEM = "Queremos que voce saiba que todos nos estamos dando o nosso maximo para que a Oryx decole e alcance todo o potencial que sabemos que ela tem. Estamos unidos!";
+// SECRET MSGS FOR ANTON HEHE
+const char txt_raul[] PROGMEM = "Hello, Anton. I want to thank you for trusting my work, you changed my life. Without a doubt, the effort being put into Oryx will be rewarded. Visit this address to learn the story of how your gift was made: htttps://antonragin.com.br Big hug.";
 const char txt_veronica[] PROGMEM = "Thank you for believing in my team and in me, and for not turning us into a McDonald's.";
-const char txt_cassia[] PROGMEM = "Anton obrigada por nos proporcionar o prazer de trabalharmos na ORYX! Conte sempre comigo!";
-const char txt_luana[]  PROGMEM = "Agradeco a oportunidade de estar fazendo parte disso aqui, embora eu tenha entrado recentemente acredito muito no sucesso desse projeto.";
-const char txt_gabriel[] PROGMEM = "A Oryx tem sido uma experiencia de aprendizado valiosa. Acredito que tanto eu, quanto a empresa poderao crescer muito juntos!";
+const char txt_arthur[] PROGMEM = "Welcome back to Brazil, Anton! It's great to have you here again. Let's make the most of this time together and kick off 2026 with energy.";
+const char txt_mateus[] PROGMEM = "Hey Anton, thank you for the opportunity, I'm very happy to be part of the Oryx team, I hope we can grow a lot in the coming years. Keep going";
+const char txt_leo[]    PROGMEM = "Everyone at Oryx is doing their best and sometimes the impossible for the project. Success is just a matter of time.";
+const char txt_aline[]  PROGMEM = "We want you to know that all of us are giving our very best — and often even the impossible — to help Oryx take off and reach the full potential we know it has. Our team is united, committed, and determined to overcome any challenge to turn this vision into reality.";
+const char txt_cassia[] PROGMEM = "Anton, thank you for giving us the pleasure of working at ORYX! You can always count on me!";
+const char txt_luana[]  PROGMEM = "I am grateful for the opportunity to be part of this, and even though I joined recently, I strongly believe in the success of this project.";
+const char txt_gabriel[] PROGMEM = "Oryx has been a valuable learning experience. I believe that both I and the company can grow a lot together!";
+const char txt_andre[] PROGMEM = "The effort has been continuous in all areas, and the expectation of experiencing the results of this intense work only grows";
 
 struct MensagemTeam {
   const char* nome;       
@@ -22,14 +25,16 @@ struct MensagemTeam {
 };
 
 MensagemTeam mensagens[] = {
+  {"Raul Pazemecxas:", txt_raul},
+  {"Veronica:", txt_veronica},
   {"Arthur:",   txt_arthur},
   {"Mateus:",   txt_mateus},
   {"Leo:",      txt_leo},
   {"Aline:",    txt_aline},
-  {"Veronica:", txt_veronica},
   {"Cassia:",   txt_cassia},
   {"Luana:",    txt_luana},
-  {"Gabriel:",  txt_gabriel}
+  {"Gabriel:",  txt_gabriel},
+  {"Andre:",    txt_andre}
 };
 
 int quantidadeMensagens = sizeof(mensagens) / sizeof(mensagens[0]);
@@ -129,7 +134,6 @@ int quantidadeMensagens = sizeof(mensagens) / sizeof(mensagens[0]);
 
 #define REST 0  
 
-
 #define CHOICE_OFF      0
 #define CHOICE_NONE     0
 #define CHOICE_RED      (1 << 0)
@@ -142,7 +146,9 @@ int quantidadeMensagens = sizeof(mensagens) / sizeof(mensagens[0]);
 #define LED_BLUE    13
 #define LED_YELLOW  5
 
-// BOTÕES
+// BUTTONS -> During the development process, some LEDs burned out. So, I got kind of fed up. Ignore if the variable name points to the wrong LED on the Arduino pin.
+//Follow the circuit schematic you created; you can change the LED colors if you want xD
+
 #define BUTTON_RED    9   
 #define BUTTON_GREEN  2
 #define BUTTON_BLUE   12
@@ -152,7 +158,7 @@ int quantidadeMensagens = sizeof(mensagens) / sizeof(mensagens[0]);
 #define BUZZER1 4
 #define BUZZER2 7
 
-// JOGO
+// GAME
 #define ROUNDS_TO_WIN 13
 #define ENTRY_TIME_LIMIT 3000
 
@@ -232,7 +238,6 @@ void setup()
 void loop()
 {
   attractMode(); 
-
 
   setLEDs(CHOICE_RED | CHOICE_GREEN | CHOICE_BLUE | CHOICE_YELLOW);
   delay(1000);
@@ -428,12 +433,10 @@ void play_loser(void)
   buzz_sound(255, 1500);
 }
 
-// -------------------------------------------------------------
-// ------- MODO DE ATRAÇÃO + LÓGICA DO COMBO -------------------
-// -------------------------------------------------------------
 void attractMode(void)
 {
   static int redPressCount = 0;
+  static int bluePressCount = 0;
   static unsigned long lastPressTime = 0;
   const unsigned long pressTimeout = 1500; 
 
@@ -444,18 +447,22 @@ void attractMode(void)
 
     byte b = checkButton();
     
-    // ---------------- LÓGICA DO BOTÃO VERMELHO (MARIO) ----------------
+    // Resetar contadores se demorar muito
+    if (millis() - lastPressTime > pressTimeout && lastPressTime != 0) {
+       redPressCount = 0;
+       bluePressCount = 0;
+       lastPressTime = 0; 
+    }
+
+    // ---------------- MARIO ----------------
     if (b == CHOICE_RED) {
-      while (checkButton() == CHOICE_RED) ; 
-      delay(50); // debounce
+      while (checkButton() == CHOICE_RED) ; // debounce
+      delay(50); 
 
       unsigned long now = millis();
-      if (now - lastPressTime > pressTimeout) {
-        redPressCount = 0; 
-      }
-
       redPressCount++;
       lastPressTime = now;
+      bluePressCount = 0; // Zera o azul
       
       toner(CHOICE_RED, 50); 
 
@@ -465,21 +472,40 @@ void attractMode(void)
       }
       continue; 
     }
+    
+    // ---------------- STARWARS AND MSG RAUL ----------------
+    else if (b == CHOICE_BLUE) {
+       while (checkButton() == CHOICE_BLUE) ; // debounce
+       delay(50);
+       
+       if (redPressCount > 0) {
+          redPressCount = 0; 
+          bluePressCount = 0;
+          
+          setLEDs(CHOICE_BLUE);
+          buzz_sound(50, 851);
+          setLEDs(CHOICE_OFF);
+
+          play_secret_message(); 
+          continue;
+       }
+
+       bluePressCount++;
+       lastPressTime = millis();
+       toner(CHOICE_BLUE, 50);
+
+       if (bluePressCount >= 4) {
+          bluePressCount = 0;
+          play_starwars();
+       }
+       continue; 
+    }
+
+    // ---------------- OUTROS BOTÕES (INICIAM O JOGO) ----------------
     else if (b != CHOICE_NONE) {
-      
-      if (b == CHOICE_BLUE && redPressCount > 0) {
-        redPressCount = 0; 
-        
-        // Confirmação sonora curta
-        setLEDs(CHOICE_BLUE);
-        buzz_sound(50, 851);
-        setLEDs(CHOICE_OFF);
-
-        play_secret_message(); 
-      }
-
       startButton = b; 
       redPressCount = 0; 
+      bluePressCount = 0;
       return; 
     }
 
@@ -562,6 +588,12 @@ void rolarMensagemPROGMEM(const char* nome, const char* textoFlash) {
 // -------------------------------------------------------------
 void play_starwars()
 {
+  // --- CORREÇÃO:  BUZZER1  GND para o tone funcionar no BUZZER2 ---
+  noTone(BUZZER2);
+  digitalWrite(BUZZER1, LOW); 
+  digitalWrite(BUZZER2, LOW);
+  // -----------------------------------------------------------------------------------
+
   const int melody[] = {
     NOTE_A4, NOTE_A4, NOTE_A4, NOTE_F4, NOTE_C5, NOTE_A4, NOTE_F4, NOTE_C5, NOTE_A4,
     NOTE_E5, NOTE_E5, NOTE_E5, NOTE_F5, NOTE_C5, NOTE_GS4, NOTE_F4, NOTE_C5, NOTE_A4,
@@ -585,6 +617,7 @@ void play_starwars()
     int note = melody[i];
     int duration = tempo[i];
 
+    // Lógica dos LEDs (Mantida igual)
     if (note != REST) {
         if (i % 4 == 0) setLEDs(CHOICE_RED);
         else if (i % 4 == 1) setLEDs(CHOICE_YELLOW);
@@ -594,20 +627,22 @@ void play_starwars()
         setLEDs(CHOICE_OFF);
     }
 
+    // Lógica do som
     if (note == REST) {
       noTone(BUZZER2);
     } else {
       tone(BUZZER2, note, duration);
     }
 
-    delay(duration * 1.30); 
+    delay((int)(duration * 1.30)); 
     noTone(BUZZER2); 
   }
 
   setLEDs(CHOICE_OFF);
   noTone(BUZZER2);
+  digitalWrite(BUZZER1, LOW);
+  digitalWrite(BUZZER2, LOW);
 }
-
 // -------------------------------------------------------------
 // -------------------- EASTER EGG: BEE GEES --------------------
 // -------------------------------------------------------------
