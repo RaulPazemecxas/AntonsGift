@@ -74,3 +74,7 @@ Located in the AntonSecret/ folder, this web project serves as the manual and "M
 -> Vanilla JS (comic.js): Handles the page turning logic, language toggling (EN/PT), and audio atmosphere (Zelda theme).
 
 -> Custom CSS (comic.css): Implements halftone patterns, skewed borders, and "speech bubble" aesthetics.
+
+
+## Breadboard and electronic diagrams for LCD & Genius Game (Anton Game =))
+
