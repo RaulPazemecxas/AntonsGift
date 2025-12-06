@@ -78,3 +78,14 @@ Located in the AntonSecret/ folder, this web project serves as the manual and "M
 
 ## Breadboard and electronic diagrams for LCD & Genius Game (Anton Game =))
 
+![WhatsApp Image 2025-12-05 at 19 59 15](https://github.com/user-attachments/assets/49f808b1-4896-40b5-bb14-a8442f5ff946)
+
+![WhatsApp Image 2025-12-05 at 23 20 25](https://github.com/user-attachments/assets/31574497-b641-4d9b-a1d0-30a3579b25ed)
+
+![WhatsApp Image 2025-12-05 at 23 22 32](https://github.com/user-attachments/assets/f8888645-ca4c-4417-bcf9-d2a6e3ae54b5)
+
+
+
+
+
+
