@@ -109,6 +109,11 @@ Located in the AntonSecret/ folder, this web project serves as the manual and "M
 
 ![WhatsApp Image 2025-12-05 at 23 22 32](https://github.com/user-attachments/assets/f8888645-ca4c-4417-bcf9-d2a6e3ae54b5)
 
+## THE FINAL FRANKENSTEIN  🧟‍♂️
+
+![WhatsApp Image 2025-12-07 at 10 06 48](https://github.com/user-attachments/assets/35d24731-63ed-4cb8-844f-5f6fca3eaf0d)
+
+
 # Website briefing:
 The website was built so that Anton can learn about the process behind the coding, soldering, planning, and design of the circuits, software, and hardware of the gift.
 
